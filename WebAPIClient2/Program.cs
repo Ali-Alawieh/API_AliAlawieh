@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
@@ -7,12 +7,10 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using WebAPIClient.log;
 using Newtonsoft.Json;
+using WebAPIClient2.Models;
 
-
-
-namespace WebAPIClient
+namespace WebAPIClient2
 {
     internal class Program
     {
@@ -21,16 +19,14 @@ namespace WebAPIClient
         
         private static async Task ProcessRepositories()
         {
-
-
             var httpClient = new HttpClient();
             var url = "https://localhost:7279/Log";
             var bodyObject = new Log(22,"Send_Request");
             var content = new StringContent(JsonConvert.SerializeObject(bodyObject),Encoding.UTF8,"application/json");
-            var result = await httpClient.PostAsync(url, content);
+            //var result = await httpClient.PostAsync(url, content);
             var result2 = await httpClient.GetAsync(url);
 
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
             Console.WriteLine(result2);
  
         }
@@ -41,4 +37,3 @@ namespace WebAPIClient
         }
     }
 }
-

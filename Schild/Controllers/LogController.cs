@@ -23,7 +23,9 @@ public class LogController : ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
-        return Ok("Anfrage Erhalten");
+        Console.WriteLine("Request erhalten");
+
+        return Ok("Request Erhalten");
         
         
     }

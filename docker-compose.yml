@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+    webapiclient2:
+        image: ${DOCKER_REGISTRY-}webapiclient2
+        build:
+          context: .
+          dockerfile: WebAPIClient2/Dockerfile
+    
+    schild:
+        image: ${DOCKER_REGISTRY-}schild
+        build:
+          context: .
+          dockerfile: schild/Dockerfile
