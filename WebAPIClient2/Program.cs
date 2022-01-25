@@ -20,7 +20,7 @@ namespace WebAPIClient2
         private static async Task ProcessRepositories()
         {
             var httpClient = new HttpClient();
-            var url = "https://localhost:7279/Log";
+            var url = "http://localhost:80/Log";
             var bodyObject = new Log(22,"Send_Request");
             var content = new StringContent(JsonConvert.SerializeObject(bodyObject),Encoding.UTF8,"application/json");
             //var result = await httpClient.PostAsync(url, content);

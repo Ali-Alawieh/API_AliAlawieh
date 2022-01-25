@@ -5,14 +5,14 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["WebAPIClient2.csproj","./"]
+COPY ["WebAPIClient2/WebAPIClient2.csproj","./"]
 RUN dotnet restore "WebAPIClient2.csproj"
 COPY . .
 WORKDIR "/src/"
-RUN dotnet build "WebAPIClient2.csproj" -c Release -o /app/build
+RUN dotnet build "WebAPIClient2/WebAPIClient2.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "WebAPIClient2.csproj" -c Release -o /app/publish
+RUN dotnet publish "WebAPIClient2/WebAPIClient2.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app

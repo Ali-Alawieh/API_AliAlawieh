@@ -5,14 +5,14 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Schild.csproj", "./"]
+COPY ["Schild/Schild.csproj", "./"]
 RUN dotnet restore "Schild.csproj"
 COPY . .
 WORKDIR "/src/"
-RUN dotnet build "Schild.csproj" -c Release -o /app/build
+RUN dotnet build "Schild/Schild.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Schild.csproj" -c Release -o /app/publish
+RUN dotnet publish "Schild/Schild.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app

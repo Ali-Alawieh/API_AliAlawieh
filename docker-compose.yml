@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.9'
 
 services:
     webapiclient2:
@@ -6,9 +6,14 @@ services:
         build:
           context: .
           dockerfile: WebAPIClient2/Dockerfile
+        network_mode: host  
+        
     
     schild:
         image: ${DOCKER_REGISTRY-}schild
         build:
           context: .
           dockerfile: schild/Dockerfile
+        network_mode: host
+
+    
