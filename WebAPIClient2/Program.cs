@@ -23,10 +23,10 @@ namespace WebAPIClient2
             var url = "http://localhost:80/Log";
             var bodyObject = new Log(22,"Send_Request");
             var content = new StringContent(JsonConvert.SerializeObject(bodyObject),Encoding.UTF8,"application/json");
-            //var result = await httpClient.PostAsync(url, content);
+            var result = await httpClient.PostAsync(url, content);
             var result2 = await httpClient.GetAsync(url);
 
-            //Console.WriteLine(result);
+            Console.WriteLine(result);
             Console.WriteLine(result2);
  
         }

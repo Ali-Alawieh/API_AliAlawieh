@@ -10,7 +10,7 @@ using Schild.DB;
 namespace Schild.Migrations
 {
     [DbContext(typeof(LogDB))]
-    [Migration("20220124123800_InitialCreate")]
+    [Migration("20220125152041_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -17,10 +17,10 @@ public class LogDB : DbContext
         var path = Environment.GetFolderPath(folder);
         DbPath = System.IO.Path.Join(path, "logs.db");
         Console.WriteLine(DbPath);
-        
+
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlite($"Data Source={DbPath}");
-    
+
 }
